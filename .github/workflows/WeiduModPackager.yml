@@ -1,3 +1,6 @@
+# WeiDU Mod Package Builder by Argent77
+# See: https://github.com/InfinityTools/WeiduModPackager
+
 name: 'WeiDU Mod Package Builder (iemod; win: amd64; use tp2 VERSION suffix)'
 
 on:
