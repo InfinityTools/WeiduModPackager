@@ -25,6 +25,12 @@ and uses the mod's own tp2 `VERSION` string as version suffix for the package fi
 | [`all-tag`](../../tree/all-tag) | GitHub action template which includes a 64-bit setup binary in the platform-specific mod packages and uses the release tag name as version suffix for mod package names. |
 | [`all-tag-x86`](../../tree/all-tag-x86) | GitHub action template which includes a 32-bit setup binary in the Windows mod package and uses the release tag name as version suffix for mod package names. |
 | [`all-tag-x86-legacy`](../../tree/all-tag-x86-legacy) | GitHub action template which includes a 32-bit legacy setup binary in the Windows mod package and uses the release tag name as version suffix for mod package names. |
+| [`win-version`](../../tree/win-version) | GitHub action template which only creates iemod and Windows mod packages (with a 64-bit setup binary), and uses the mod's own tp2 `VERSION` string as version suffix for mod package names. |
+| [`win-version-x86`](../../tree/win-version-x86) | GitHub action template which only creates iemod and Windows mod packages (with a 32-bit setup binary), and uses the mod's own tp2 `VERSION` string as version suffix for mod package names. |
+| [`win-version-x86-legacy`](../../tree/win-version-x86-legacy) | GitHub action template only creates iemod and Windows mod packages (with a 32-bit legacy setup binary), and uses the mod's own tp2 `VERSION` string as version suffix for mod package names.|
+| [`win-tag`](../../tree/win-tag) | GitHub action template which only creates iemod and Windows mod packages (with a 64-bit setup binary), and uses the release tag name as version suffix for mod package names. |
+| [`win-tag-x86`](../../tree/win-tag-x86) | GitHub action template which only creates iemod and Windows mod packages (with a 32-bit setup binary), and uses the release tag name as version suffix for mod package names. |
+| [`win-tag-x86-legacy`](../../tree/win-tag-x86-legacy) | GitHub action template only creates iemod and Windows mod packages (with a 32-bit legacy setup binary), and uses the release tag name as version suffix for mod package names. |
 
 ## How to use
 
