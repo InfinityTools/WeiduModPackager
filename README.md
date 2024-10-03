@@ -17,12 +17,14 @@ and uses the mod's own tp2 `VERSION` string as version suffix for the package fi
 
 ## Available templates:
 
-- `all-version`: This GitHub action template. It uses the mod's own tp2 `VERSION` string as version suffix for mod package names.
-- [`all-version-x86`](../../tree/all-version-x86): GitHub action template which includes a 32-bit setup binary in the Windows mod package.
-- [`all-version-x86-legacy`](../../tree/all-version-x86-legacy): GitHub action template which includes a 32-bit legacy setup binary in the Windows mod package. (*Note: This template should only be used for mods that contain filenames with non-ASCII characters, such as Infinity Animations.)
-- [`all-tag`](../../tree/all-tag): GitHub action template which uses the release tag name as version suffix for mod package names.
-- [`all-tag-x86`](../../tree/all-tag-x86): GitHub action template which includes a 32-bit setup binary in the Windows mod package and uses the release tag name as version suffix for mod package names.
-- [`all-tag-x86-legacy`](../../tree/all-tag-x86-legacy): GitHub action template which includes a 32-bit legacy setup binary in the Windows mod package and uses the release tag name as version suffix for mod package names.
+| Template | Description |
+| -------- | ----------- |
+| `all-version` | This GitHub action template. It includes a 64-bit setup binary in the platform-specific mod packages and uses the mod's own tp2 `VERSION` string as version suffix for mod package names. |
+| [`all-version-x86`](../../tree/all-version-x86) | GitHub action template which includes a 32-bit setup binary in the Windows mod package and uses the mod's own tp2 `VERSION` string as version suffix for mod package names. |
+| [`all-version-x86-legacy`](../../tree/all-version-x86-legacy) | GitHub action template which includes a 32-bit legacy setup binary in the Windows mod package and uses the mod's own tp2 `VERSION` string as version suffix for mod package names. (*Note: This template should only be used for mods that contain filenames with non-ASCII characters, such as Infinity Animations.) |
+| [`all-tag`](../../tree/all-tag) | GitHub action template which includes a 64-bit setup binary in the platform-specific mod packages and uses the release tag name as version suffix for mod package names. |
+| [`all-tag-x86`](../../tree/all-tag-x86) | GitHub action template which includes a 32-bit setup binary in the Windows mod package and uses the release tag name as version suffix for mod package names. |
+| [`all-tag-x86-legacy`](../../tree/all-tag-x86-legacy) | GitHub action template which includes a 32-bit legacy setup binary in the Windows mod package and uses the release tag name as version suffix for mod package names. |
 
 ## How to use
 
