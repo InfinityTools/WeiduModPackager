@@ -1,3 +1,6 @@
+# WeiDU Mod Package Builder by Argent77
+# See: https://github.com/InfinityTools/WeiduModPackager
+
 name: 'WeiDU Mod Package Builder (iemod; win/lin/mac: amd64; use git release tag name as suffix)'
 
 on:
