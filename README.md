@@ -89,8 +89,8 @@ jobs:
       # - version: Attempts to fetch the VERSION string from the mod's own tp2 file.
       # - none:    Indicates that no version suffix is added.
       # Everything else is treated as a literal string that is added to the mod package name.
-      # Note 1: Do not include spaces in the suffix string. Everything after the first space is discarded by the action.
-      # Note 2: Special characters (such as :, <, >, or ?) are replaced by underscores.
+      # Important: Do not include spaces in the suffix string. The build script may not handle it properly.
+      # Note: Special characters (such as :, <, >, or ?) are replaced by underscores.
       # "version" is used if this parameter is omitted.
       suffix: ${{ github.event.release.tag_name }}
 ```
