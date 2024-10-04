@@ -93,4 +93,36 @@ jobs:
       # Note: Special characters (such as :, <, >, or ?) are replaced by underscores.
       # "version" is used if this parameter is omitted.
       suffix: ${{ github.event.release.tag_name }}
+
+      # An arbitrary string that will be appended after the package base name but before the version suffix.
+      # This can be used to further specialize a package name (e.g. when providing packages for
+      # different architectures for the same platform).
+      # Unused if this parameter is omitted.
+      extra: ''
+
+      # This parameter defines the mod package base name.
+      # Supported types: tp2, ini. Anything else is treated as a literal string.
+      # - tp2: Uses the tp2 filename as base for generating the mod package base name.
+      # - ini: Fetches the "Name" definition from the associated Project Infinity metadata ini file.
+      #        Falls back to "tp2" if not available.
+      # "tp2" is used if this parameter is omitted.
+      naming: ''
+
+      # WeiDU version to use for the setup binaries for platform-specific zip archives.
+      # Specify "latest" to use the latest WeiDU version, or a specific WeiDU version.
+      # Currently supported versions: 246 or later.
+      # "latest" version is used if this parameter is omitted.
+      weidu_version: 249
+
+      # Defines the prefix string to use for Windows-specific zip archive names.
+      # "win" is used if this parameter is omitted.
+      prefix_windows: win
+
+      # Defines the prefix string to use for Linux-specific zip archive names.
+      # "lin" is used if this parameter is omitted.
+      prefix_linux: lin
+
+      # Defines the prefix string to use for macOS-specific zip archive names.
+      # "osx" is used if this parameter is omitted.
+      prefix_macos: osx
 ```
