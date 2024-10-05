@@ -1,4 +1,4 @@
-# WeiDU Mod Package Builder
+# WeiDU Mod Packager
 *A GitHub action that automates creation of WeiDU mod packages.*
 
 ## Overview
@@ -36,7 +36,7 @@ It uses the tp2 filename as package names and uses the mod's own tp2 `VERSION` s
 
 This repository contains several preconfigured workflows for use in your own mods. To do this select the desired branch from the dropdown list and download the code by clicking on "Code" > Download ZIP. Unpack the downloaded zip file and copy the `.github` folder to the root folder of your own mod project.
 
-Alternatively, select "Add file" > Create new file, enter `.github/workflows/WeiduPackageBuilder.yml` into the filename input field (do not skip the leading dot `.`) and copy-paste the content of ".github/workflows/WeiduPackageBuilder.yml" from the unpacked zip file. Finally, commit the changes to your project.
+Alternatively, select "Add file" > Create new file, enter `.github/workflows/WeiduModPackager.yml` into the filename input field (do not skip the leading dot `.`) and copy-paste the content of ".github/workflows/WeiduModPackager.yml" from the unpacked zip file. Finally, commit the changes to your project.
 
 The action is invoked automatically whenever a new release is published. It can take a few moments for the mod packages to appear on the release page. Details about the mod package generation process can be inquired on the "Actions" page.
 
@@ -48,7 +48,7 @@ To create your own workflow you can either use one of preconfigured templates an
 
 This is a basic workflow file as yaml script:
 ```yaml
-name: 'My own WeiDU Mod Package Builder'
+name: 'My own WeiDU Mod Packager'
 
 on:
   # Trigger this action whenever a release is published.
