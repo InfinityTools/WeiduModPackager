@@ -13,4 +13,4 @@ This branch builds WeiDU mod packages for
 - iemod
 - Windows (`amd64`)
 
-and uses the mod's own tp2 `VERSION` string as version suffix for the package filenames.
+It uses the tp2 filename as package names and uses the mod's own tp2 `VERSION` string as version suffix for the package filenames.

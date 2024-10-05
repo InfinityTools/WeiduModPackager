@@ -22,3 +22,4 @@ jobs:
       type: ${{ matrix.type }}
       architecture: amd64
       suffix: version
+      naming: tp2
