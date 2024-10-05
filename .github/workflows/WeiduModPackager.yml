@@ -22,3 +22,4 @@ jobs:
       type: ${{ matrix.type }}
       architecture: x86-legacy
       suffix: version
+      naming: tp2
