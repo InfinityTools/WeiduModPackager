@@ -15,4 +15,4 @@ This branch builds WeiDU mod packages for
 - Linux (`amd64`)
 - macOS (`amd64`)
 
-and uses the git release tag name as version suffix for the package filenames.
+It uses the tp2 filename as package names and uses the git release tag name as version suffix for the package filenames.

@@ -32,3 +32,4 @@ jobs:
       type: windows
       architecture: x86-legacy
       suffix: ${{ github.event.release.tag_name }}
+      naming: tp2
