@@ -106,7 +106,7 @@ jobs:
       # - ini: Fetches the "Name" definition from the associated Project Infinity metadata ini file.
       #        Falls back to "tp2" if not available.
       # "tp2" is used if this parameter is omitted.
-      naming: 'ini'
+      naming: ini
 
       # WeiDU version to use for the setup binaries for platform-specific zip archives.
       # Specify "latest" to use the latest WeiDU version, or a specific WeiDU version.
