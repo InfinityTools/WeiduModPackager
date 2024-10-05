@@ -32,3 +32,4 @@ jobs:
       type: windows
       architecture: x86
       suffix: version
+      naming: tp2
