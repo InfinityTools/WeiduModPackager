@@ -1,4 +1,4 @@
-# WeiDU Mod Package Builder
+# WeiDU Mod Packager
 *A GitHub action that automates creation of WeiDU mod packages.*
 
 ## Overview
