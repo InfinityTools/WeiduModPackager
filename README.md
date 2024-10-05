@@ -13,7 +13,7 @@ This branch (`all-version`) builds WeiDU mod packages for
 - Linux (`amd64`)
 - macOS (`amd64`)
 
-It generates the package name from the tp2 filename and uses the mod's own tp2 `VERSION` string as version suffix for the package filenames.
+It uses the tp2 filename as package names and uses the mod's own tp2 `VERSION` string as version suffix for the package filenames.
 
 ## Available templates:
 
