@@ -108,6 +108,12 @@ jobs:
       # "tp2" is used if this parameter is omitted.
       naming: ini
 
+      # This parameter defines the tp2 filename of the mod to include in the mod package.
+      # Specifying this option is only useful if a project contains multiple mods
+      # (e.g. EET, EET_end, EET_gui).
+      # All available mods are included if this parameter is omitted.
+      tp2_name: ''
+
       # WeiDU version to use for the setup binaries for platform-specific zip archives.
       # Specify "latest" to use the latest WeiDU version, or a specific WeiDU version.
       # Currently supported versions: 246 or later.
