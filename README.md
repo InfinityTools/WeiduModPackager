@@ -31,6 +31,10 @@ It uses the tp2 filename as package names and uses the mod's own tp2 `VERSION` s
 | [`win-tag`](../../tree/win-tag) | GitHub action template which only creates iemod and Windows mod packages (with a 64-bit setup binary), and uses the release tag name as version suffix for mod package names. |
 | [`win-tag-x86`](../../tree/win-tag-x86) | GitHub action template which only creates iemod and Windows mod packages (with a 32-bit setup binary), and uses the release tag name as version suffix for mod package names. |
 | [`win-tag-x86-legacy`](../../tree/win-tag-x86-legacy) | GitHub action template which only creates iemod and Windows mod packages (with a 32-bit legacy setup binary), and uses the release tag name as version suffix for mod package names. |
+| [`multi-version`](../../tree/multi-version) | GitHub action template which includes setup binaries and scripts for all supported platforms (Windows, Linux and macOS), and uses the mod's own tp2 `VERSION` string as version suffix for mod package names. |
+| [`multi-version-x86-legacy`](../../tree/multi-version-x86-legacy) | GitHub action template which includes setup binaries and scripts for all supported platforms (Windows, Linux and macOS). It prefers to call the 32-bit legacy setup binary on Windows and uses the mod's own tp2 `VERSION` string as version suffix for mod package names. |
+| [`multi-tag`](../../tree/multi-tag) | GitHub action template which includes setup binaries and scripts for all supported platforms (Windows, Linux and macOS), and uses the release tag name as version suffix for mod package names. |
+| [`multi-tag-x86-legacy`](../../tree/multi-tag-x86-legacy) | GitHub action template which includes setup binaries and scripts for all supported platforms (Windows, Linux and macOS). It prefers to call the 32-bit legacy setup binary on Windows and uses the release tag name as version suffix for mod package names. |
 
 ## How to use
 
