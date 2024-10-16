@@ -46,7 +46,7 @@ The action is invoked automatically whenever a new release is published. It can 
 
 To create your own workflow you can either use one of preconfigured templates and adjust it accordingly to your needs, or create a workflow script yourself in the `.github/workflows` folder of your git project.
 
-This is a basic workflow file as yaml script:
+This is a basic workflow file as yaml script with detailed information about available parameters:
 ```yaml
 name: 'My own WeiDU Mod Packager'
 
@@ -68,19 +68,32 @@ jobs:
     # The "with" directive allows you to customize mod package generation.
     with:
       # "type" determines the resulting archive format.
-      # Supported keywords: iemod, windows, linux, macos
+      # Supported keywords: iemod, windows, linux, macos, multi
       # "iemod" creates a .iemod package for Project Infinity.
       # "windows", "linux" and "macos" create a zip file which includes a compatible setup binary.
       # "macos" also contains a .command script file.
       # Platform-specific package names will be prefixed by "win-", "lin-" and "mac-" respectively.
+      # "multi" creates a zip file that includes includes setup binaries and scripts for all
+      # supported platforms (Windows, Linux, macOS).
+      # Notes about multi-platform archives:
+      # 1) Size of the mod package will increase by about 12 MB compared to "iemod".
+      # 2) Interactive mod installation will be invoked by a script instead of a setup binary:
+      #    "setup-*.command" for macOS, "setup-*.sh" for Linux, and "setup-*.bat" for Windows.
+      # 3) Platform-specific WeiDU binaries can be found in the
+      #    "weidu_external/tools/weidu/{platform}/{architecture}" folder structure.
+      #    Not all platforms have binaries for multiple architectures.
+      # 4) Specifying "x86-legacy" architecture instructs the Windows setup script to use the
+      #    "x86-legacy" WeiDU binary. Otherwise a compatible architecture is determined automatically
+      #    by the script.
       # "iemod" is used if this parameter is omitted.
       type: windows
 
       # "architecture" defines the architecture of the included setup binary.
       # This is currently only relevant if "type" is "windows".
       # Supported keywords: amd64, x86, x86-legacy
-      # Specify "x86-legacy" to include a setup binary that is still compatible with older Windows versions
-      # and does not mangle non-ASCII characters in filenames. (Useful for mods such as Infinity Animations.)
+      # Specify "x86-legacy" to include a setup binary that is still compatible with older Windows
+      # versions and does not mangle non-ASCII characters in filenames. This can be useful for
+      # specific mods, such as Generalized Biffing in combination with Infinity Animations.
       # "amd64" is used if this parameter is omitted.
       architecture: amd64
 
@@ -89,14 +102,15 @@ jobs:
       # - version: Attempts to fetch the VERSION string from the mod's own tp2 file.
       # - none:    Indicates that no version suffix is added.
       # Everything else is treated as a literal string that is added to the mod package name.
-      # Important: Do not include spaces in the suffix string. The build script may not handle it properly.
+      # Important: Do not include spaces in the suffix string. The build script may not handle it
+      #            properly.
       # Note: Special characters (such as :, <, >, or ?) are replaced by underscores.
       # "version" is used if this parameter is omitted.
       suffix: ${{ github.event.release.tag_name }}
 
-      # An arbitrary string that will be appended after the package base name but before the version suffix.
-      # This can be used to further specialize a package name (e.g. when providing packages for
-      # different architectures for the same platform).
+      # An arbitrary string that will be appended after the package base name but before the version
+      # suffix. This can be used to further specialize a package name (e.g. when providing packages
+      # for different architectures for the same platform).
       # Unused if this parameter is omitted.
       extra: ''
 
@@ -118,7 +132,7 @@ jobs:
       # Specify "latest" to use the latest WeiDU version, or a specific WeiDU version.
       # Currently supported versions: 246 or later.
       # "latest" version is used if this parameter is omitted.
-      weidu_version: 249
+      weidu_version: latest
 
       # Defines the prefix string to use for Windows-specific zip archive names.
       # "win" is used if this parameter is omitted.
