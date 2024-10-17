@@ -11,6 +11,6 @@ A customizable GitHub action that automates creation of WeiDU mod packages. It p
 
 This branch builds WeiDU mod packages for
 - iemod
-- Multi-platform (autodetect architecture)
+- Multi-platform (`amd64`)
 
 It uses the tp2 filename as package names and uses the mod's own tp2 `VERSION` string as version suffix for the package filenames.
