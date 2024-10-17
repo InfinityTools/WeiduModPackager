@@ -25,16 +25,16 @@ It uses the tp2 filename as package names and uses the mod's own tp2 `VERSION` s
 | [`all-tag`](../../tree/all-tag) | GitHub action template which includes 64-bit setup binaries in the platform-specific mod packages for Windows, Linux and macOS, and uses the release tag name as version suffix for mod package names. |
 | [`all-tag-x86`](../../tree/all-tag-x86) | GitHub action template which includes a 32-bit setup binary in the Windows mod package and 64-bit setup binaries in Linux and macOS packages, and uses the release tag name as version suffix for mod package names. |
 | [`all-tag-x86-legacy`](../../tree/all-tag-x86-legacy) | GitHub action template which includes a 32-bit legacy setup binary in the Windows mod package and 64-bit setup binaries in Linux and macOS packages, and uses the release tag name as version suffix for mod package names. |
+| [`multi-version`](../../tree/multi-version) | GitHub action template which includes setup binaries and scripts for all supported platforms (Windows, Linux and macOS) into a single mod package, and uses the mod's own tp2 `VERSION` string as version suffix for mod package names. |
+| [`multi-version-x86-legacy`](../../tree/multi-version-x86-legacy) | GitHub action template which includes setup binaries and scripts for all supported platforms (Windows, Linux and macOS) into a single mod package. It prefers to call the 32-bit legacy setup binary on Windows and uses the mod's own tp2 `VERSION` string as version suffix for mod package names. |
+| [`multi-tag`](../../tree/multi-tag) | GitHub action template which includes setup binaries and scripts for all supported platforms (Windows, Linux and macOS) into a single mod package, and uses the release tag name as version suffix for mod package names. |
+| [`multi-tag-x86-legacy`](../../tree/multi-tag-x86-legacy) | GitHub action template which includes setup binaries and scripts for all supported platforms (Windows, Linux and macOS) into a single mod package. It prefers to call the 32-bit legacy setup binary on Windows and uses the release tag name as version suffix for mod package names. |
 | [`win-version`](../../tree/win-version) | GitHub action template which only creates iemod and Windows mod packages (with a 64-bit setup binary), and uses the mod's own tp2 `VERSION` string as version suffix for mod package names. |
 | [`win-version-x86`](../../tree/win-version-x86) | GitHub action template which only creates iemod and Windows mod packages (with a 32-bit setup binary), and uses the mod's own tp2 `VERSION` string as version suffix for mod package names. |
 | [`win-version-x86-legacy`](../../tree/win-version-x86-legacy) | GitHub action template which only creates iemod and Windows mod packages (with a 32-bit legacy setup binary), and uses the mod's own tp2 `VERSION` string as version suffix for mod package names.|
 | [`win-tag`](../../tree/win-tag) | GitHub action template which only creates iemod and Windows mod packages (with a 64-bit setup binary), and uses the release tag name as version suffix for mod package names. |
 | [`win-tag-x86`](../../tree/win-tag-x86) | GitHub action template which only creates iemod and Windows mod packages (with a 32-bit setup binary), and uses the release tag name as version suffix for mod package names. |
 | [`win-tag-x86-legacy`](../../tree/win-tag-x86-legacy) | GitHub action template which only creates iemod and Windows mod packages (with a 32-bit legacy setup binary), and uses the release tag name as version suffix for mod package names. |
-| [`multi-version`](../../tree/multi-version) | GitHub action template which includes setup binaries and scripts for all supported platforms (Windows, Linux and macOS) into a single mod package, and uses the mod's own tp2 `VERSION` string as version suffix for mod package names. |
-| [`multi-version-x86-legacy`](../../tree/multi-version-x86-legacy) | GitHub action template which includes setup binaries and scripts for all supported platforms (Windows, Linux and macOS) into a single mod package. It prefers to call the 32-bit legacy setup binary on Windows and uses the mod's own tp2 `VERSION` string as version suffix for mod package names. |
-| [`multi-tag`](../../tree/multi-tag) | GitHub action template which includes setup binaries and scripts for all supported platforms (Windows, Linux and macOS) into a single mod package, and uses the release tag name as version suffix for mod package names. |
-| [`multi-tag-x86-legacy`](../../tree/multi-tag-x86-legacy) | GitHub action template which includes setup binaries and scripts for all supported platforms (Windows, Linux and macOS) into a single mod package. It prefers to call the 32-bit legacy setup binary on Windows and uses the release tag name as version suffix for mod package names. |
 
 ## How to use
 
@@ -77,23 +77,20 @@ jobs:
       # "windows", "linux" and "macos" create a zip file which includes a compatible setup binary.
       # "macos" also contains a .command script file.
       # Platform-specific package names will be prefixed by "win-", "lin-" and "mac-" respectively.
-      # "multi" creates a zip file that includes includes setup binaries and scripts for all
-      # supported platforms (Windows, Linux, macOS).
+      # "multi" creates a zip file that includes setup binaries and scripts for all supported platforms
+      # (Windows, Linux, macOS).
       # Notes about multi-platform archives:
-      # 1) Size of the mod package will increase by about 12 MB compared to "iemod".
-      # 2) Interactive mod installation will be invoked by a script instead of a setup binary:
-      #    "setup-*.command" for macOS, "setup-*.sh" for Linux, and "setup-*.bat" for Windows.
-      # 3) Platform-specific WeiDU binaries can be found in the
-      #    "weidu_external/tools/weidu/{platform}/{architecture}" folder structure.
-      #    Not all platforms have binaries for multiple architectures.
-      # 4) Specifying "x86-legacy" architecture instructs the Windows setup script to use the
-      #    "x86-legacy" WeiDU binary. Otherwise a compatible architecture is determined automatically
-      #    by the script.
+      # 1) Size of the mod package will increase by about 10 MB compared to "iemod".
+      # 2) On Windows platforms users will run setup-*.exe directly.
+      #    For macOS and Linux interactive mod installation will be invoked by a script
+      #    ("setup-*.command" for macOS, "setup-*.sh" for Linux), and the WeiDU binaries
+      #    are placed into the "weidu_external/tools/weidu/{platform}" folder structure.
       # "iemod" is used if this parameter is omitted.
       type: windows
 
       # "architecture" defines the architecture of the included setup binary.
-      # This is currently only relevant if "type" is "windows".
+      # This is currently only relevant if "type" is "windows". Other platforms provide architecture-
+      # specific binaries only for WeiDU version 246.
       # Supported keywords: amd64, x86, x86-legacy
       # Specify "x86-legacy" to include a setup binary that is still compatible with older Windows
       # versions and does not mangle non-ASCII characters in filenames. This can be useful for
