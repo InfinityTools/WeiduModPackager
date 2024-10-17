@@ -147,6 +147,11 @@ jobs:
       prefix_linux: lin
 
       # Defines the prefix string to use for macOS-specific zip archive names.
-      # "osx" is used if this parameter is omitted.
-      prefix_macos: osx
+      # "mac" is used if this parameter is omitted.
+      prefix_macos: mac
+
+      # Specifies whether to enable or disable the WeiDU auto-update feature in setup scripts of
+      # multi-platform zip archives (see "type" parameter above).
+      # "true" is used if this parameter is omitted.
+      multi_autoupdate: true
 ```
