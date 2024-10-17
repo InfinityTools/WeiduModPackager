@@ -11,6 +11,6 @@ A customizable GitHub action that automates creation of WeiDU mod packages. It p
 
 This branch builds WeiDU mod packages for
 - iemod
-- Multi-platform (prefer `x86-legacy` on Windows)
+- Multi-platform (`x86-legacy` on Windows)
 
 It uses the tp2 filename as package names and uses the git release tag name as version suffix for the package filenames.
