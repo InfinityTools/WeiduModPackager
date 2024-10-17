@@ -1,7 +1,7 @@
 # WeiDU Mod Packager by Argent77
 # See: https://github.com/InfinityTools/WeiduModPackager
 
-name: 'WeiDU Mod Packager (iemod; multi-platform: auto; use tp2 VERSION suffix)'
+name: 'WeiDU Mod Packager (iemod; multi-platform: amd64; use tp2 VERSION suffix)'
 
 on:
   release:
