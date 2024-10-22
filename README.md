@@ -153,4 +153,11 @@ jobs:
       # multi-platform zip archives (see "type" parameter above).
       # "true" is used if this parameter is omitted.
       multi_autoupdate: true
+
+      # Indices whether duplicate files which only differ in case should be preserved when found in
+      # the same folder of the mod.
+      # Enabling this option can be useful on Linux where filesystems are case-sensitive by default.
+      # Otherwise, duplicate files with the oldest modification date are removed.
+      # "false" is used if this parameter is omitted.
+      case_sensitive: false
 ```
