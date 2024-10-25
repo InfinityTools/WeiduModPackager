@@ -165,7 +165,7 @@ jobs:
       # arch        Specifies the architecture of the WeiDU binary (as defined by the "arch"
       #             parameter). This variable is empty for iemod package types.
       # os_prefix   Specifies the platform-specific prefix (as defined by "prefix_win", "prefix_lin",
-      #             and "prefix_mac"). This variable is empty for iemod package types.
+      #             and "prefix_mac"). This variable is empty for "iemod" and "multi" package types.
       # base_name   Specifies the base name of the mod package without any prefix or suffix (as
       #             defined by the "naming" parameter).
       # extra       Specifies the content of the "extra" parameter.
