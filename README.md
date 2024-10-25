@@ -149,6 +149,32 @@ jobs:
       # "mac" is used if this parameter is omitted.
       prefix_macos: mac
 
+      # "name_fmt" defines the format of the mod package name without file extension. It supports
+      # placeholder variables that can be placed into individual groups together with optional
+      # literal strings to form the resulting package name.
+      # Groups are delimited by angle brackets (<group content>).
+      # Placeholder variables are delimited by percentage signs (%placeholder%).
+      # Any characters outside of groups are preserved in the resulting mod package name.
+      # A group is discarded completely if the placeholder variables in the group are empty.
+      # A group without placeholder variables is always considered empty and will be discarded.
+      # To use percent characters literally you have to escape them with backslash characters
+      # (e.g. \%). Note that only the percentage sign is preserved. Angle brackets are considered
+      # invalid filename characters and are replaced by the standard placeholder character.
+      # Supported placeholder variables:
+      # type        Specifies the package type (as defined by the "type" parameter).
+      # arch        Specifies the architecture of the WeiDU binary (as defined by the "arch"
+      #             parameter). This variable is empty for iemod package types.
+      # os_prefix   Specifies the platform-specific prefix (as defined by "prefix_win", "prefix_lin",
+      #             and "prefix_mac"). This variable is empty for iemod package types.
+      # base_name   Specifies the base name of the mod package without any prefix or suffix (as
+      #             defined by the "naming" parameter).
+      # extra       Specifies the content of the "extra" parameter.
+      # version     Specifies the version string (as defined by the "suffix" parameter).
+      # Unsupported placeholder variables are resolved to empty strings.
+      # The string "<%os_prefix%-><%base_name%><-%extra%><-%version%>" is used if this parameter
+      # is omitted.
+      name_fmt: '<%os_prefix%-><%base_name%><-%extra%><-%version%>'
+
       # Specifies whether to enable or disable the WeiDU auto-update feature in setup scripts of
       # multi-platform zip archives (see "type" parameter above).
       # "true" is used if this parameter is omitted.
@@ -160,4 +186,15 @@ jobs:
       # Otherwise, duplicate files with the oldest modification date are removed.
       # "false" is used if this parameter is omitted.
       case_sensitive: false
+
+      # Specifies whether version strings should be "beautified". When this option is enabled then:
+      # - version numbers are prefixed with a "v"
+      # - Capital letter "V" prefix is lowercased
+      # - spaces between "v" and the version number are removed
+      # "true" is used if this parameter is omitted.
+      beautify: true
+
+      # Specifies whether all letters in the mod package filename should be lowercased.
+      # "false" is used if this parameter is omitted.
+      lower_case: false
 ```
