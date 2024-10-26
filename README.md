@@ -175,6 +175,13 @@ jobs:
       # is omitted.
       name_fmt: '<%os_prefix%-><%base_name%><-%extra%><-%version%>'
 
+      # Defines the list of platforms for which setup binaries should be included in multi-platform
+      # mod packages. Individual platforms are separated by colons (:). Package type is treated as
+      # a regular platform-specific zip archive if only a single platform is specified.
+      # Supported platforms: linux, macos, windows
+      # "linux:macos:windows" is used if this parameter is omitted.
+      multi_platforms: 'linux:macos:windows'
+
       # Specifies whether to enable or disable the WeiDU auto-update feature in setup scripts of
       # multi-platform zip archives (see "type" parameter above).
       # "true" is used if this parameter is omitted.
