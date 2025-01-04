@@ -204,4 +204,12 @@ jobs:
       # Specifies whether all letters in the mod package filename should be lowercased.
       # "false" is used if this parameter is omitted.
       lower_case: false
+
+      # Specifies whether submodules defined in the repository should be checked out.
+      # Supported types: false, true, recursive
+      # - false:      Don't check out submodules.
+      # - true:       Check out submodules defined in the repo.
+      # - recursive:  Recursively check out submodules defined in the repo.
+      # "false" is used if this parameter is omitted.
+      include_submodules: 'false'
 ```
