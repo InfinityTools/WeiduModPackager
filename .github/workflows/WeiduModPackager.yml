@@ -1,7 +1,7 @@
 # WeiDU Mod Packager by Argent77
 # See: https://github.com/InfinityTools/WeiduModPackager
 
-name: 'WeiDU Mod Packager (iemod; lin/mac: amd64; win: x86-legacy; use git release tag name as suffix)'
+name: 'WeiDU Mod Packager (iemod; lin: amd64; mac: arm64; win: x86-legacy; use git release tag name as suffix)'
 
 on:
   release:
