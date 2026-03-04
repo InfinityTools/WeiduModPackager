@@ -44,7 +44,7 @@ The action is invoked automatically whenever a new release is published. It can 
 
 ## Create your own workflow
 
-To create your own workflow you can either use one of preconfigured templates and adjust it accordingly to your needs, or create a workflow script yourself in the `.github/workflows` folder of your git project.
+To create your own workflow you can either use one of the preconfigured templates and adjust it accordingly to your needs, or create a workflow script yourself in the `.github/workflows` folder of your git project.
 
 This is a basic workflow file as yaml script with detailed information about available parameters:
 ```yaml
@@ -82,7 +82,7 @@ jobs:
       #    ("setup-*.command" for macOS, "setup-*.sh" for Linux), and the WeiDU binaries
       #    are placed into the "weidu_external/tools/weidu/{platform}" folder structure.
       # "iemod" is used if this parameter is omitted.
-      type: windows
+      type: iemod
 
       # "architecture" defines the architecture of the included setup binary.
       # This is currently only relevant if "type" is "windows" or "macos". Other platforms provide
