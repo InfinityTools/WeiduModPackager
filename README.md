@@ -96,7 +96,8 @@ jobs:
 
       # architecture_windows={architecture}
       # This parameter determines the architecture of the included Windows setup binary.
-      # It can be used for multi-platform packages to further customize the architecture of the setup binary.
+      # It can be used for multi-platform packages to further customize the architecture of the
+      # setup binary.
       # This parameter overrides the "architecture" parameter if specified.
       # Supported architectures: amd64, x86, x86-legacy
       # "architecture" parameter is used if this parameter is omitted.
@@ -104,7 +105,8 @@ jobs:
 
       # architecture_linux={architecture}
       # This parameter determines the architecture of the included Linux setup binary.
-      # It can be used for multi-platform packages to further customize the architecture of the setup binary.
+      # It can be used for multi-platform packages to further customize the architecture of the
+      # setup binary.
       # This parameter overrides the "architecture" parameter if specified.
       # Supported architectures: amd64, x86
       # "architecture" parameter is used if this parameter is omitted.
@@ -112,7 +114,8 @@ jobs:
 
       # architecture_macos={architecture}
       # This parameter determines the architecture of the included macOS setup binary.
-      # It can be used for multi-platform packages to further customize the architecture of the setup binary.
+      # It can be used for multi-platform packages to further customize the architecture of the
+      # setup binary.
       # This parameter overrides the "architecture" parameter if specified.
       # Supported architectures: amd64, arm64
       # "arm64" architecture is used if this parameter is omitted.
